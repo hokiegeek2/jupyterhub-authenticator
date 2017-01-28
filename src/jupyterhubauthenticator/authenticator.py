@@ -14,7 +14,7 @@ class BasicAuthenticator(Authenticator):
 class KeyValueFileAuthenticator(Authenticator):
     def _getLoginDictionary(self):
         logins = {}
-        with open(os.environ("LOGIN_FILE")) as f:
+        with open(os.environ["LOGIN_FILE"]) as f:
             for line in f:
                 (key,val) = line.split(":")
                 logins[key] = val.rstrip('\n')
